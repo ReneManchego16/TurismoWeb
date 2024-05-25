@@ -1,0 +1,163 @@
+doctype html
+html
+  head
+    title PeruConect
+    link(rel="stylesheet" href="/styles/style.css")
+  body
+    // Video de fondo
+    video#background-video(autoplay loop muted)
+      source(src="/videos/video.mp4" type="video/mp4")
+
+    // Contenedor principal
+    .container
+      header
+        h1 LO MEJOR DE NUESTRO PERÚ
+        p Sumérgete a nuestra conocer cada rincón de nuestro país. Interactúa con diferentes culturas, planea un viaje entre amigos con nosotros donde lo principal es tu diversión.
+        button#play-video Turísmo Perú
+
+      // Formulario de búsqueda
+      .search-form
+        form(action="/search" method="get")
+          .form-group
+            label(for="location") Location
+            input#location(type="text" name="location" placeholder="Search For A Destination")
+          .form-group
+            label(for="guests") Guests
+            input#guests(type="number" name="guests" placeholder="How many Guests?")
+          .form-group
+            label(for="date") Date
+            input#date(type="date" name="date")
+          button(type="submit") Search
+
+    // Nueva sección: Explora Ciudades Populares
+    .popular-cities
+      h2 Explora Ciudades Populares
+      p Con nuestra IA entrenada te mostramos los mejores lugares más recomendados por los turistas y locales.
+      // Lista de ciudades
+      .city-buttons
+        button Arequipa
+        button Moquegua
+        button Tacna
+        button Cajamarca
+        button Cuzco
+        button Piura
+        button Tarapoto
+        button Ica
+      // Información de la ciudad
+      .city-info
+        img(src="/images/tacna.jpg" alt="Tacna")
+        .city-description
+          h3 TACNA
+          p Conocida como La ciudad heroica, no solo enamora por su belleza paisajística, sino por el patriotismo que se respira en sus calles. Tacna alberga monumentos históricos, pinturas rupestres, petroglifos, deslumbrantes playas, aguas termales y una deliciosa y variada gastronomía.
+          .tags
+            span.tag Transporte público
+            span.tag Naturaleza y Aventura
+            span.tag Transporte privado
+            span.tag Agencia Turismo
+            span.tag Ubicación
+
+    script(src="https://code.jquery.com/jquery-3.6.0.min.js")
+    script.
+      // Script para reproducir el video
+      $(document).ready(function(){
+          $("#play-video").click(function(){
+              var video = $("#background-video").get(0);
+              video.play();
+          });
+      })
+
+     // Sección de "cards"
+    .cards
+      .card
+        img(src="/images/tacna1.jpg" alt="Tacna: Puente colgante de Miculla")
+        .card-content
+          h3 Tacna: Puente colgante de Miculla
+          p Duración 1 hora
+          p Fácil Transporte
+          p Plan Familiar
+          p.rating ★★★★☆ 584 reviews
+          p.price FREE per person
+      .card
+        img(src="/images/tacna2.jpg" alt="Tacna: Campos de Tarata")
+        .card-content
+          h3 Tacna: Campos de Tarata
+          p Duración 1 hora
+          p Fácil Transporte
+          p Plan Familiar
+          p.rating ★★★★☆ 584 reviews
+          p.price $3.00 per person
+      .card
+        img(src="/images/tacna3.jpg" alt="Tacna: Humedales de Ite")
+        .card-content
+          h3 Tacna: Humedales de Ite
+          p Duración 2 horas
+          p Fácil Transporte
+          p Plan Familiar
+          p.rating ★★★★☆ 584 reviews
+          p.price $4.00 per person
+      .card
+        img(src="/images/tacna4.jpg" alt="Tacna: Geyser de Candarave 'Ojo de Ángel'")
+        .card-content
+          h3 Tacna: Geyser de Candarave 'Ojo de Ángel'
+          p Duración 2 horas
+          p Fácil Transporte
+          p Plan Aventura
+          p.rating ★★★★☆ 584 reviews
+          p.price $6.00 per person
+
+    // Contenedor de la imagen de fondo e información
+    .info-container
+      .info-background
+      .info-content
+        img(src="/images/arequipa.jpeg" alt="Catedral de Arequipa")
+        .info-text
+          h2 Catedral de Arequipa
+          p
+            | Arequipa lo tiene todo. Sí, absolutamente todo lo que puedas imaginar, lo encuentras en el territorio de la 'Ciudad Blanca'. Historia, aventura, paisajes fabulosos, vida silvestre, gastronomía, arte y mucho más se esconde en la Villa de Nuestra Señora de la Asunta de Arequipa.
+          .tags
+            span.tag Trending Now
+          p
+            | 4.9 (300 reviews)
+          button Dirigirme
+
+    script(src="https://code.jquery.com/jquery-3.6.0.min.js")
+    script.
+      // Script para reproducir el video
+      $(document).ready(function(){
+          $("#play-video").click(function(){
+              var video = $("#background-video").get(0);
+              video.play();
+          });
+      })
+  // Destinos destacados
+  .container.mt-5
+    h2.text-center Destinos Destacados
+    p.text-center A continuación nuestra IA te mostrará los destinos más visitados y recomendados por nuestros viajeros en este mes.
+    .carousel.slide#destinosCarousel(data-ride='carousel')
+      .carousel-inner
+        .carousel-item.active
+          .row
+            each destino, index in [{nombre: 'ANCASH', duracion: '8 horas', precio: '$35.00', imagen: 'ancash.jpg'}, {nombre: 'LIMA', duracion: '1 hora', precio: '$35.00', imagen: 'lima.jpg'}, {nombre: 'MOQUEGUA', duracion: '10 horas', precio: '$35.00', imagen: 'moquegua.jpg'}, {nombre: 'SAN MARTIN', duracion: '5 horas', precio: '$35.00', imagen: 'sanmartin.jpg'}, {nombre: 'ICA', duracion: '4 horas', precio: '$35.00', imagen: 'ica.jpg'}]
+              .col-md-2
+                .card
+                  img.card-img-top(src=`/images/${destino.imagen}`, alt=destino.nombre)
+                  .card-body
+                    h5.card-title= destino.nombre
+                    p.card-text Duración #{destino.duracion}
+                    p.card-text Precio #{destino.precio}
+                    a.btn.btn-primary(href='#') Ver más
+
+  // Chatbot de Perú COnnect
+  .container.info-container
+    .row
+      .col-md-6
+        img(src='/images/bott.png', alt='ChatBot', class='img-fluid')
+      .col-md-6
+        h3 PeruConect ChatBot
+        p Disponible las 24h del día
+        p Presentamos a ConectBot, un chatbot especializado con IA que te brindará toda la información que necesites para planear un viaje por el Perú o conocer los restaurantes más descatados
+        button.btn.btn-warning Ciudades
+        br
+        button.btn.btn-warning Restaurantes
+script(src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1")
+df-messenger(intent="WELCOME", chat-title="PeruConnect", agent-id="993bd46e-1e64-4a5f-bfbd-4d0212a9005a", language-code="en")

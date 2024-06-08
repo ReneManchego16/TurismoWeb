@@ -7,13 +7,19 @@ html
     // Video de fondo
     video#background-video(autoplay loop muted)
       source(src="/videos/video.mp4" type="video/mp4")
-
+ 
     // Contenedor principal
     .container
       header
         h1 LO MEJOR DE NUESTRO PERÚ
         p Sumérgete a nuestra conocer cada rincón de nuestro país. Interactúa con diferentes culturas, planea un viaje entre amigos con nosotros donde lo principal es tu diversión.
-        button#play-video Turísmo Perú
+        a(href="/register")
+          button#play-video Registrarme
+        br 
+        br
+        a(href="/login")
+          button#login-button Iniciar Sesión
+      br
 
       // Formulario de búsqueda
       .search-form
@@ -28,7 +34,7 @@ html
             label(for="date") Date
             input#date(type="date" name="date")
           button(type="submit") Search
-
+      
     // Nueva sección: Explora Ciudades Populares
     .popular-cities
       h2 Explora Ciudades Populares
@@ -137,11 +143,11 @@ html
       .carousel-inner
         .carousel-item.active
           .row
-            each destino, index in [{nombre: 'ANCASH', duracion: '8 horas', precio: '$35.00', imagen: 'Img7.jpg'}, {nombre: 'LIMA', duracion: '1 hora', precio: '$35.00', imagen: 'Img8.jpg'}, {nombre: 'MOQUEGUA', duracion: '10 horas', precio: '$35.00', Imagen: 'Img9.jpg'}, {nombre: 'SAN MARTIN', duracion: '5 horas', precio: '$35.00', imagen: 'Img10.jpg'}, {nombre: 'ICA', duracion: '4 horas', precio: '$35.00', Imagen: 'Img4.jpg'}]
+            each destino, index in [{nombre: 'ANCASH', duracion: '8 horas', precio: '$35.00', imagen: 'img7.jpg'}, {nombre: 'LIMA', duracion: '1 hora', precio: '$35.00', imagen: 'img8.jpg'}, {nombre: 'MOQUEGUA', duracion: '10 horas', precio: '$35.00', imagen: 'img9.jpg'}, {nombre: 'SAN MARTIN', duracion: '5 horas', precio: '$35.00', imagen: 'img10.jpg'}, {nombre: 'ICA', duracion: '4 horas', precio: '$35.00', imagen: 'img4.jpg'}]
               .col-md-2
                 .card
                   img.card-img-top(src=`/images/${destino.imagen}`, alt=destino.nombre)
-                  .card-body
+                  .card-content
                     h5.card-title= destino.nombre
                     p.card-text Duración #{destino.duracion}
                     p.card-text Precio #{destino.precio}
@@ -156,8 +162,8 @@ html
         h3 PeruConect ChatBot
         p Disponible las 24h del día
         p Presentamos a ConectBot, un chatbot especializado con IA que te brindará toda la información que necesites para planear un viaje por el Perú o conocer los restaurantes más descatados
-        button.btn.btn-warning Ciudades
+        button Ciudades
         br
-        button.btn.btn-warning Restaurantes
+        button Restaurantes
 script(src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1")
-df-messenger(intent="WELCOME", chat-title="Turismo", agent-id="a40e5d22-29a9-438c-8c11-d7cd660f0199", language-code="en")
+df-messenger(intent="WELCOME", chat-title="botperu", agent-id="c20b1b20-a403-4bef-b363-c7b61c718b84", language-code="es")

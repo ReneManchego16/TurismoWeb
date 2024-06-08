@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Rene Poma",
+    "email": "manuelmanchego02@gmail.com",
+    "password": "$2b$10$zVDrFCvf0tRlvNipbM8lbujpLHrVSEUHZ9CxC3AtJ8Wzhk7VDXYjK",
+    "travelerType": "adventure",
+    "avatar": null
+  },
+  {
+    "name": "Rene Manuel Poma Manchego",
+    "email": "manuelmanchego02@gmail.com",
+    "password": "$2b$10$OoCrhM7G1B3Byq9.1NSFJ.31uF5GX5dFCKe/sMgebJD3M0vAF7PT6",
+    "travelerType": "family",
+    "avatar": "/uploads/avatar-1717570392113.JPG"
+  },
+  {
+    "name": "Rene Poma",
+    "email": "manuelmanchego02@gmail.com",
+    "password": "$2b$10$kDB/I943gElBiIvybLQNDOq.6nTG8WUM1pxj5fEGBxbi6Ux2GuGu2",
+    "travelerType": "adventure",
+    "avatar": null
+  },
+  {
+    "name": "beli",
+    "email": "beli@gmail.com",
+    "password": "$2b$10$9jb3JXBarfBHVufiHYpm7O6WGK1JtYDBArrTT8fw/B6Khxo1x2Ch6",
+    "travelerType": "adventure",
+    "avatar": null
+  }
+]

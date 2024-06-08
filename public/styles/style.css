@@ -16,8 +16,9 @@ body, html {
 .container {
     position: relative;
     text-align: center;
-    color: white;
     padding: 20px;
+    margin-top: 50px;
+    color: #fff;
 }
 
 header {
@@ -30,6 +31,7 @@ h1 {
 
 p {
     font-size: 20px;
+    color: #333;
 }
 
 .search-form {
@@ -119,6 +121,7 @@ button:hover {
 .city-description {
     max-width: 500px;
     text-align: left;
+    color: #333;
 }
 
 .city-description h3 {
@@ -129,12 +132,14 @@ button:hover {
 .city-description p {
     font-size: 18px;
     margin-bottom: 20px;
+    color: #333;
 }
 
 .tags {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    color: #333;
 }
 
 .tag {
@@ -154,12 +159,13 @@ button:hover {
 }
 
 .card {
-    background-color: background-color: rgba(255, 255, 255, 0.363);;
+    background-color: rgb(255, 255, 255);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     width: 250px;
     text-align: left;
+    color: #333;
 }
 
 .card img {
@@ -175,7 +181,11 @@ button:hover {
     font-size: 18px;
     margin-bottom: 10px;
 }
-
+.card-body {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #00000000;
+}
 .card-content p {
     font-size: 14px;
     margin-bottom: 5px;
@@ -190,7 +200,7 @@ button:hover {
 }
 
 /* Estilos para el contenedor de información con imagen de fondo */
-.info-container {
+.info-container p{
     position: relative;
     margin-top: 50px;
     padding: 50px 20px;
@@ -209,6 +219,7 @@ button:hover {
     background: url('/images/arequipa-bg.jpg') no-repeat center center/cover;
     opacity: 0.3;
     z-index: -1;
+    color: #ccc;
 }
 
 .info-content {
@@ -220,14 +231,15 @@ button:hover {
 }
 
 .info-content img {
-    width: 300px;
-    height: auto;
+    width: 5px;
+    height: 5px;
     border-radius: 10px;
 }
 
 .info-text {
     max-width: 500px;
     text-align: left;
+    color: #ccc;
 }
 
 .info-text h2 {
@@ -238,6 +250,7 @@ button:hover {
 .info-text p {
     font-size: 18px;
     margin-bottom: 20px;
+    color: #ccc;
 }
 /* Agregar estilos para el contenedor de información y carrusel */
 .info-container {
@@ -251,8 +264,8 @@ button:hover {
   }
   
   .info-container img {
-    width: 100%;
-    height: auto;
+    width: 50%;
+    height: 50%;
     border-radius: 10px;
   }
   
@@ -284,3 +297,38 @@ button:hover {
     margin: 20px 0;
   }
   
+  .h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: black;
+  }
+  
+  form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  input.form-control, select.form-control {
+    border-radius: 5px;
+  }
+  
+  button.btn {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  .container mt-5
+  {
+    color: #ccc;
+  }

@@ -19,5 +19,5 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 
 app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
+    console.log(`El servidor está corriendo en el puerto: ${port}`);
 });
